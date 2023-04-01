@@ -29,8 +29,33 @@ import USDT from "./src/USDT.svg"
 import IDK from "./src/IDK.svg"
 import DH from "./src/DH.svg"
 import phone from "./src/phone.svg"
+import {useState} from "react";
 
+const arr = [
+  <div className="header_info_row_block">
+    <div className="header_info_row_block_title">About</div>
+    <div className="header_info_row_block_text">The project allows you to purchase unique objects and items. You can pay for all properties using cryptocurrency payments. We make it simple quickly and secure for you</div>
+  </div>,
+  <div className="header_info_row_block">
+    <div className="header_info_row_block_title">Premium</div>
+    <div className="header_info_row_block_text">After buying a property through our service you get private access to a privileged
+      club with the opportunity to purchase the rarely gems or art objects</div>
+  </div>,
+  <div className="header_info_row_block">
+    <div className="header_info_row_block_title">Residence permit</div>
+    <div className="header_info_row_block_text">We help in getting the residence permit of any countries through the purchase of real estate on our service</div>
+  </div>,
+  <div className="header_info_row_block">
+    <div className="header_info_row_block_title">Make an enquire</div>
+    <div className="header_info_row_block_colum">
+      <div className="header_info_row_block_text">You can make an request for any question or suggestion. Our experts will contact you asap</div>
+      <div className="header_info_row_block_subtext">get in touch</div>
+    </div>
+  </div>
+
+]
 function App() {
+  const [index, setIndex] = useState(0)
   return (
     <div className="App">
       <div className="header">
@@ -38,13 +63,15 @@ function App() {
         <div className="header_wrapper">
           <div className="container">
             <div className="header_top_row">
-              <div className="header_top_row_cost_row">
-                <img src={bit} alt="" className="header_top_row_cost_row"/>
-                <div className="header_top_row_cost_num">~$21,822.74</div>
-              </div>
-              <div className="header_top_row_cost_row">
-                <img src={eng} alt="" className="header_top_row_cost_row"/>
-                <div className="header_top_row_cost_num">Eng</div>
+              <div className="header_top_row_row">
+                <div className="header_top_row_cost_row">
+                  <img src={bit} alt="" className="header_top_row_cost_row"/>
+                  <div className="header_top_row_cost_num">~$21,822.74</div>
+                </div>
+                <div className="header_top_row_cost_row">
+                  <img src={eng} alt="" className="header_top_row_cost_row"/>
+                  <div className="header_top_row_cost_num">Eng</div>
+                </div>
               </div>
             </div>
           </div>
@@ -68,6 +95,16 @@ function App() {
                 <div className="header_info_row_block_text">You can make an request for any question or suggestion. Our experts will contact you asap</div>
                 <div className="header_info_row_block_subtext">get in touch</div>
               </div>
+            </div>
+          </div>
+          <div className="header_info_row_mobil">
+            {arr[index]}
+            <div className="header_info_row_mobil_row">
+              {arr.map((slide, index)=>(
+                <div className="button" onClick={()=>{
+                  setIndex(index)
+                }} key={index}>+</div>
+              ))}
             </div>
           </div>
         </div>
@@ -125,6 +162,11 @@ function App() {
                 <img src={Designer} alt=""/>
                 <div className="icon_text">Designer’s</div>
               </div>
+            </div>
+            <div className="body_row_block">
+              <div className="body_row_block_btn">All</div>
+              <div className="body_row_block_btn">Sell</div>
+              <div className="body_row_block_btn">Rent</div>
             </div>
           </div>
           <div className="body_block">
@@ -290,6 +332,8 @@ function App() {
               </div>
             </div>
           </div>
+        </div>
+        <div className="phone_wrapper">
           <div className="phone">
             <img src={phone} alt=""/>
           </div>
