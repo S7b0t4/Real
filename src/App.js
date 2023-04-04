@@ -29,6 +29,8 @@ import USDT from "./src/USDT.svg"
 import IDK from "./src/IDK.svg"
 import DH from "./src/DH.svg"
 import phone from "./src/phone.svg"
+import filttr from "./src/filttr.svg"
+import idk_btn from "./src/idk_btn.svg"
 import {useState} from "react";
 
 const arr = [
@@ -54,8 +56,64 @@ const arr = [
   </div>
 
 ]
+const newArr = [[
+  <div className="mini_row">
+    <div className="icon">
+      <img src={all} alt=""/>
+      <div className="icon_text">All</div>
+    </div>
+    <div className="icon">
+      <img src={seaside} alt=""/>
+      <div className="icon_text">Seaside</div>
+    </div>
+    <div className="icon">
+      <img src={mountains} alt=""/>
+      <div className="icon_text">Mountains</div>
+    </div>
+    <div className="icon">
+      <img src={Historical} alt=""/>
+      <div className="icon_text">Historical</div>
+    </div>
+  </div>
+    ],[
+  <div className="mini_row">
+    <div className="icon">
+      <img src={Residence} alt=""/>
+      <div className="icon_text">Residence</div>
+    </div>
+    <div className="icon">
+      <img src={For_life} alt=""/>
+      <div className="icon_text">For life</div>
+    </div>
+    <div className="icon">
+      <img src={Big_city_life} alt=""/>
+      <div className="icon_text">Big city life</div>
+    </div>
+    <div className="icon">
+      <img src={Prestige} alt=""/>
+      <div className="icon_text">Prestige</div>
+    </div>
+  </div>
+    ],[
+  <div className="mini_row">
+    <div className="icon">
+      <img src={Investment} alt=""/>
+      <div className="icon_text">Investment</div>
+    </div>
+    <div className="icon">
+      <img src={Commecial} alt=""/>
+      <div className="icon_text">Commecial</div>
+    </div>
+    <div className="icon">
+      <img src={Designer} alt=""/>
+      <div className="icon_text">Designer’s</div>
+    </div>
+  </div>
+    ]
+  ]
 function App() {
   const [index, setIndex] = useState(0)
+  const [newIndex, setNewIndex] = useState(0)
   return (
     <div className="App">
       <div className="header">
@@ -169,6 +227,28 @@ function App() {
               <div className="body_row_block_btn">Rent</div>
             </div>
           </div>
+          <div className="body_row_adoptive">
+            <div className="filter_btn_row">
+              <div className="filter_btn">
+                <img src={filttr} alt=""/>
+                <div className="filter_btn_text">Filter</div>
+              </div>
+              <div className="body_row_block">
+                <div className="body_row_block_btn">All</div>
+                <div className="body_row_block_btn">Sell</div>
+                <div className="body_row_block_btn">Rent</div>
+              </div>
+            </div>
+            <div className="body_row_gow">
+              <img onClick={
+                ()=>{if(newIndex !== 0)setNewIndex(newIndex - 1)}
+              } className="body_row_gow_btn left" src={idk_btn} alt=""/>
+              <img onClick={
+                ()=>{if(newIndex !== newArr.length - 1)setNewIndex(newIndex + 1)}
+              } className="body_row_gow_btn right" src={idk_btn} alt=""/>
+              {newArr[newIndex]}
+            </div>
+          </div>
           <div className="body_block">
             <div className="body_block_colum">
               <div className="body_block_colum_row">
@@ -226,7 +306,7 @@ function App() {
               </div>
               <div className="body_block_colum_row">
                 <div className="body_block_colum_row_block">
-                  <img className="body_block_colum_row_block_img" src={img1} alt=""/>
+                  <img className="body_block_colum_row_block_img" src={img4} alt=""/>
                   <div className="body_block_colum_row_block_title">Modern Villa 55 with Pool</div>
                   <div className="body_block_colum_row_block_subtitle">Al Marsa Street, 66, Dubai</div>
                   <div className="body_block_colum_row_block_row">
@@ -243,7 +323,7 @@ function App() {
                   </div>
                 </div>
                 <div className="body_block_colum_row_block">
-                  <img className="body_block_colum_row_block_img" src={img2} alt=""/>
+                  <img className="body_block_colum_row_block_img" src={img5} alt=""/>
                   <div className="body_block_colum_row_block_title">The residence resort</div>
                   <div className="body_block_colum_row_block_subtitle">Thalang District, Thailand, Phuket</div>
                   <div className="body_block_colum_row_block_row">
@@ -260,7 +340,7 @@ function App() {
                   </div>
                 </div>
                 <div className="body_block_colum_row_block">
-                  <img className="body_block_colum_row_block_img" src={img3} alt=""/>
+                  <img className="body_block_colum_row_block_img" src={img6} alt=""/>
                   <div className="body_block_colum_row_block_title">Villa Beyond-Namaste</div>
                   <div className="body_block_colum_row_block_subtitle">Bang Thao, Thailand, Phuket</div>
                   <div className="body_block_colum_row_block_row">
@@ -279,7 +359,7 @@ function App() {
               </div>
               <div className="body_block_colum_row">
                 <div className="body_block_colum_row_block">
-                  <img className="body_block_colum_row_block_img" src={img1} alt=""/>
+                  <img className="body_block_colum_row_block_img" src={img7} alt=""/>
                   <div className="body_block_colum_row_block_title">Modern Villa 55 with Pool</div>
                   <div className="body_block_colum_row_block_subtitle">Al Marsa Street, 66, Dubai</div>
                   <div className="body_block_colum_row_block_row">
@@ -296,7 +376,7 @@ function App() {
                   </div>
                 </div>
                 <div className="body_block_colum_row_block">
-                  <img className="body_block_colum_row_block_img" src={img2} alt=""/>
+                  <img className="body_block_colum_row_block_img" src={img8} alt=""/>
                   <div className="body_block_colum_row_block_title">The residence resort</div>
                   <div className="body_block_colum_row_block_subtitle">Thalang District, Thailand, Phuket</div>
                   <div className="body_block_colum_row_block_row">
@@ -313,7 +393,7 @@ function App() {
                   </div>
                 </div>
                 <div className="body_block_colum_row_block">
-                  <img className="body_block_colum_row_block_img" src={img3} alt=""/>
+                  <img className="body_block_colum_row_block_img" src={img9} alt=""/>
                   <div className="body_block_colum_row_block_title">Villa Beyond-Namaste</div>
                   <div className="body_block_colum_row_block_subtitle">Bang Thao, Thailand, Phuket</div>
                   <div className="body_block_colum_row_block_row">
