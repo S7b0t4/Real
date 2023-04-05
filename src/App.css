@@ -75,6 +75,7 @@
   text-align: center;
 }
 .header_top_row_row{
+  user-select: none;
   color: white;
   display: flex;
   justify-content: space-between;
@@ -86,6 +87,7 @@
 /*body*/
 .body{
   padding-top: 24px;
+  user-select: none;
 }
 .body_block{
   padding-bottom: 202px;
@@ -151,6 +153,7 @@
   width: 100%;
 }
 .body_block_colum_row_block_title{
+  cursor: pointer;
   margin-top: 10px;
   font-size: 22px;
   color: #3A3A3A;
