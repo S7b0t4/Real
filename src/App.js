@@ -32,84 +32,80 @@ import phone from "./src/phone.svg"
 import filttr from "./src/filttr.svg"
 import idk_btn from "./src/idk_btn.svg"
 import {useState} from "react";
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { Pagination, FreeMode } from 'swiper';
+import 'swiper/swiper-bundle.min.css';
 
 const arr = [
-  <div className="header_info_row_block">
-    <div className="header_info_row_block_title">About</div>
-    <div className="header_info_row_block_text">The project allows you to purchase unique objects and items. You can pay for all properties using cryptocurrency payments. We make it simple quickly and secure for you</div>
-  </div>,
-  <div className="header_info_row_block">
-    <div className="header_info_row_block_title">Premium</div>
-    <div className="header_info_row_block_text">After buying a property through our service you get private access to a privileged
-      club with the opportunity to purchase the rarely gems or art objects</div>
-  </div>,
-  <div className="header_info_row_block">
-    <div className="header_info_row_block_title">Residence permit</div>
-    <div className="header_info_row_block_text">We help in getting the residence permit of any countries through the purchase of real estate on our service</div>
-  </div>,
-  <div className="header_info_row_block">
-    <div className="header_info_row_block_title">Make an enquire</div>
-    <div className="header_info_row_block_colum">
-      <div className="header_info_row_block_text">You can make an request for any question or suggestion. Our experts will contact you asap</div>
-      <div className="header_info_row_block_subtext">get in touch</div>
-    </div>
-  </div>
+  {
+    title:"About",
+    text:"The project allows you to purchase unique objects and items. You can pay for all properties using cryptocurrency payments. We make it simple quickly and secure for you",
+    link:""
+  },
+
+  {
+    title:"Premium",
+    text:"After buying a property through our service you get private access to a privileged \n" +
+      "club with the opportunity to purchase the rarely gems or art objects",
+    link:""
+  },
+  {
+    title:"Residence permit",
+    text:"We help in getting the residence permit of any countries through the purchase of real estate on our service",
+    link:""
+  },
+  {
+    title:"Make an enquire",
+    text:"You can make an request for any question or suggestion. Our experts will contact you asap",
+    link:"get in touch"
+  },
 
 ]
-const newArr = [[
-  <div className="mini_row">
+const newArr = [
     <div className="icon">
       <img src={all} alt=""/>
       <div className="icon_text">All</div>
-    </div>
+    </div>,
     <div className="icon">
       <img src={seaside} alt=""/>
       <div className="icon_text">Seaside</div>
-    </div>
+    </div>,
     <div className="icon">
       <img src={mountains} alt=""/>
       <div className="icon_text">Mountains</div>
-    </div>
+    </div>,
     <div className="icon">
       <img src={Historical} alt=""/>
       <div className="icon_text">Historical</div>
-    </div>
-  </div>
-    ],[
-  <div className="mini_row">
+    </div>,
     <div className="icon">
       <img src={Residence} alt=""/>
       <div className="icon_text">Residence</div>
-    </div>
+    </div>,
     <div className="icon">
       <img src={For_life} alt=""/>
       <div className="icon_text">For life</div>
-    </div>
+    </div>,
     <div className="icon">
       <img src={Big_city_life} alt=""/>
       <div className="icon_text">Big city life</div>
-    </div>
+    </div>,
     <div className="icon">
       <img src={Prestige} alt=""/>
       <div className="icon_text">Prestige</div>
-    </div>
-  </div>
-    ],[
-  <div className="mini_row">
+    </div>,
     <div className="icon">
       <img src={Investment} alt=""/>
       <div className="icon_text">Investment</div>
-    </div>
+    </div>,
     <div className="icon">
       <img src={Commecial} alt=""/>
       <div className="icon_text">Commecial</div>
-    </div>
+    </div>,
     <div className="icon">
       <img src={Designer} alt=""/>
       <div className="icon_text">Designer’s</div>
-    </div>
-  </div>
-    ]
+    </div>,
   ]
 function App() {
   const [index, setIndex] = useState(0)
@@ -155,15 +151,26 @@ function App() {
               </div>
             </div>
           </div>
-          <div className="header_info_row_mobil">
-            {arr[index]}
-            <div className="header_info_row_mobil_row">
-              {arr.map((slide, index)=>(
-                <div className="button" onClick={()=>{
-                  setIndex(index)
-                }} key={index}>+</div>
+          <div className="header_info_row_mobil_idk">
+            <Swiper
+              modules={[Pagination]}
+              pagination={{ clickable: true }}
+              spaceBetween={0}
+              slidesPerView={1}
+              className="row"
+            >
+              {arr.map((slide) =>(
+                <SwiperSlide>
+                  <div className="row_center">
+                    <div className="row_row">
+                      <div className="row_row_title">{slide.title}</div>
+                      <div className="row_row_text">{slide.text}</div>
+                      <div className="row_row_link">{slide.link}</div>
+                    </div>
+                  </div>
+                </SwiperSlide>
               ))}
-            </div>
+            </Swiper>
           </div>
         </div>
       </div>
@@ -240,13 +247,21 @@ function App() {
               </div>
             </div>
             <div className="body_row_gow">
-              <img onClick={
-                ()=>{if(newIndex !== 0)setNewIndex(newIndex - 1)}
-              } className="body_row_gow_btn left" src={idk_btn} alt=""/>
-              <img onClick={
-                ()=>{if(newIndex !== newArr.length - 1)setNewIndex(newIndex + 1)}
-              } className="body_row_gow_btn right" src={idk_btn} alt=""/>
-              {newArr[newIndex]}
+              <Swiper
+                modules={[Pagination, FreeMode]}
+                freeMode
+                spaceBetween={0}
+                slidesPerView={4}
+                className="row"
+              >
+                {newArr.map((slide) =>(
+                  <SwiperSlide>
+                    <div className="row dkdslfk">
+                      {slide}
+                    </div>
+                  </SwiperSlide>
+                ))}
+              </Swiper>
             </div>
           </div>
           <div className="body_block">
