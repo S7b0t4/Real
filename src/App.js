@@ -107,6 +107,81 @@ const newArr = [
       <div className="icon_text">Designer’s</div>
     </div>,
   ]
+const idkArr = [
+  {
+    img:img1,
+    title:"Modern Villa 55 with Pool",
+    subtitle:"Al Marsa Street, 66, Dubai",
+    sale:"Sale: 105,56 ",
+    rent:"Rent: 2,5",
+    tags:["all", "residence"]
+  },
+  {
+    img:img2,
+    title:"The residence resort",
+    subtitle:"Thalang District, Thailand, Phuket",
+    sale:"Sale: 105,56 ",
+    rent:"Rent: n/a",
+    tags:["all", "residence"]
+  },
+  {
+    img:img3,
+    title:"Villa Beyond-Namaste",
+    subtitle:"Bang Thao, Thailand, Phuket",
+    sale:"Sale: 105,56 ",
+    rent:"Rent: 3,7",
+    tags:["all", "residence"]
+  },
+  {
+    img:img4,
+    title:"The Waves Tower A",
+    subtitle:"The Waves, Dubai Marina, Dubai",
+    sale:"Sale: 105,56 ",
+    rent:"Rent: 2,5",
+    tags:["all", "residence"]
+  },
+  {
+    img:img5,
+    title:"Dubai Hills Estate",
+    subtitle:"The Waves, Dubai Marina, Dubai",
+    sale:"Sale: 105,56 ",
+    rent:"Rent: n/a",
+    tags:["all", "residence"]
+  },
+  {
+    img:img6,
+    title:"Ava by Omniyat Penthouse",
+    subtitle:"Ava by Omniyat, Palm Jumeirah, Dubai",
+    sale:"Sale: 105,56 ",
+    rent:"Rent: 3,7",
+    tags:["all", "residence"]
+  },
+  {
+    img:img7,
+    title:"Elite Royal Apartment",
+    subtitle:"3 Villas, Jumeirah, Dubai",
+    sale:"Sale: 105,56 ",
+    rent:"Rent: 2,5",
+    tags:["all", "residence"]
+  },
+  {
+    img:img8,
+    title:"Damac Hills Villa Cavalli",
+    subtitle:"Lagoons, Dubai",
+    sale:"Sale: 105,56 ",
+    rent:"Rent: n/a",
+    tags:["all", "residence"]
+  },
+  {
+    img:img9,
+    title:"Two Sophisticated Appartmemts",
+    subtitle:"The Waves, Dubai Marina, Dubai",
+    sale:"Sale: 105,56 ",
+    rent:"Rent: 3,7",
+    tags:["all", "residence"]
+  },
+
+]
 function App() {
   const [index, setIndex] = useState(0)
   const [newIndex, setNewIndex] = useState(0)
@@ -265,167 +340,17 @@ function App() {
             </div>
           </div>
           <div className="body_block">
-            <div className="body_block_colum">
-              <div className="body_block_colum_row">
-                <div className="body_block_colum_row_block">
-                  <img className="body_block_colum_row_block_img" src={img1} alt=""/>
-                  <div className="body_block_colum_row_block_title">Modern Villa 55 with Pool</div>
-                  <div className="body_block_colum_row_block_subtitle">Al Marsa Street, 66, Dubai</div>
-                  <div className="body_block_colum_row_block_row">
-                    <div className="body_block_colum_row_block_row_colum">
-                      <div className="body_block_colum_row_block_row_colum_title">Sale: 105,56</div>
-                      <div className="body_block_colum_row_block_row_colum_subtitle">Rent: 2,5</div>
-                    </div>
-                    <div className="body_block_colum_row_block_row_row">
-                      <img src={bit2} alt="" className="body_block_colum_row_block_row_row_img"/>
-                      <img src={USDT} alt="" className="body_block_colum_row_block_row_row_img"/>
-                      <img src={IDK} alt="" className="body_block_colum_row_block_row_row_img"/>
-                      <img src={DH} alt="" className="body_block_colum_row_block_row_row_img"/>
-                    </div>
-                  </div>
-                </div>
-                <div className="body_block_colum_row_block">
-                  <img className="body_block_colum_row_block_img" src={img2} alt=""/>
-                  <div className="body_block_colum_row_block_title">The residence resort</div>
-                  <div className="body_block_colum_row_block_subtitle">Thalang District, Thailand, Phuket</div>
-                  <div className="body_block_colum_row_block_row">
-                    <div className="body_block_colum_row_block_row_colum">
-                      <div className="body_block_colum_row_block_row_colum_title">Sale: 105,56 </div>
-                      <div className="body_block_colum_row_block_row_colum_subtitle">Rent: n/a</div>
-                    </div>
-                    <div className="body_block_colum_row_block_row_row">
-                      <img src={bit2} alt="" className="body_block_colum_row_block_row_row_img"/>
-                      <img src={USDT} alt="" className="body_block_colum_row_block_row_row_img"/>
-                      <img src={IDK} alt="" className="body_block_colum_row_block_row_row_img"/>
-                      <img src={DH} alt="" className="body_block_colum_row_block_row_row_img"/>
-                    </div>
-                  </div>
-                </div>
-                <div className="body_block_colum_row_block">
-                  <img className="body_block_colum_row_block_img" src={img3} alt=""/>
-                  <div className="body_block_colum_row_block_title">Villa Beyond-Namaste</div>
-                  <div className="body_block_colum_row_block_subtitle">Bang Thao, Thailand, Phuket</div>
-                  <div className="body_block_colum_row_block_row">
-                    <div className="body_block_colum_row_block_row_colum">
-                      <div className="body_block_colum_row_block_row_colum_title">Sale: 105,56</div>
-                      <div className="body_block_colum_row_block_row_colum_subtitle">Rent: 3,7</div>
-                    </div>
-                    <div className="body_block_colum_row_block_row_row">
-                      <img src={bit2} alt="" className="body_block_colum_row_block_row_row_img"/>
-                      <img src={USDT} alt="" className="body_block_colum_row_block_row_row_img"/>
-                      <img src={IDK} alt="" className="body_block_colum_row_block_row_row_img"/>
-                      <img src={DH} alt="" className="body_block_colum_row_block_row_row_img"/>
-                    </div>
-                  </div>
+            {idkArr.map((item)=>(
+              <div className="body_block_item">
+                <img className="body_block_item_img" src={item.img} alt=""/>
+                <div className="body_block_item_wrapper">
+                  <div className="body_block_item_title">{item.title}</div>
+                  <div className="body_block_item_subtitle">{item.subtitle}</div>
+                  <div className="body_block_item_sale">{item.sale}</div>
+                  <div className="body_block_item_rent">{item.rent}</div>
                 </div>
               </div>
-              <div className="body_block_colum_row">
-                <div className="body_block_colum_row_block">
-                  <img className="body_block_colum_row_block_img" src={img4} alt=""/>
-                  <div className="body_block_colum_row_block_title">Modern Villa 55 with Pool</div>
-                  <div className="body_block_colum_row_block_subtitle">Al Marsa Street, 66, Dubai</div>
-                  <div className="body_block_colum_row_block_row">
-                    <div className="body_block_colum_row_block_row_colum">
-                      <div className="body_block_colum_row_block_row_colum_title">Sale: 105,56</div>
-                      <div className="body_block_colum_row_block_row_colum_subtitle">Rent: 2,5</div>
-                    </div>
-                    <div className="body_block_colum_row_block_row_row">
-                      <img src={bit2} alt="" className="body_block_colum_row_block_row_row_img"/>
-                      <img src={USDT} alt="" className="body_block_colum_row_block_row_row_img"/>
-                      <img src={IDK} alt="" className="body_block_colum_row_block_row_row_img"/>
-                      <img src={DH} alt="" className="body_block_colum_row_block_row_row_img"/>
-                    </div>
-                  </div>
-                </div>
-                <div className="body_block_colum_row_block">
-                  <img className="body_block_colum_row_block_img" src={img5} alt=""/>
-                  <div className="body_block_colum_row_block_title">The residence resort</div>
-                  <div className="body_block_colum_row_block_subtitle">Thalang District, Thailand, Phuket</div>
-                  <div className="body_block_colum_row_block_row">
-                    <div className="body_block_colum_row_block_row_colum">
-                      <div className="body_block_colum_row_block_row_colum_title">Sale: 105,56 </div>
-                      <div className="body_block_colum_row_block_row_colum_subtitle">Rent: n/a</div>
-                    </div>
-                    <div className="body_block_colum_row_block_row_row">
-                      <img src={bit2} alt="" className="body_block_colum_row_block_row_row_img"/>
-                      <img src={USDT} alt="" className="body_block_colum_row_block_row_row_img"/>
-                      <img src={IDK} alt="" className="body_block_colum_row_block_row_row_img"/>
-                      <img src={DH} alt="" className="body_block_colum_row_block_row_row_img"/>
-                    </div>
-                  </div>
-                </div>
-                <div className="body_block_colum_row_block">
-                  <img className="body_block_colum_row_block_img" src={img6} alt=""/>
-                  <div className="body_block_colum_row_block_title">Villa Beyond-Namaste</div>
-                  <div className="body_block_colum_row_block_subtitle">Bang Thao, Thailand, Phuket</div>
-                  <div className="body_block_colum_row_block_row">
-                    <div className="body_block_colum_row_block_row_colum">
-                      <div className="body_block_colum_row_block_row_colum_title">Sale: 105,56</div>
-                      <div className="body_block_colum_row_block_row_colum_subtitle">Rent: 3,7</div>
-                    </div>
-                    <div className="body_block_colum_row_block_row_row">
-                      <img src={bit2} alt="" className="body_block_colum_row_block_row_row_img"/>
-                      <img src={USDT} alt="" className="body_block_colum_row_block_row_row_img"/>
-                      <img src={IDK} alt="" className="body_block_colum_row_block_row_row_img"/>
-                      <img src={DH} alt="" className="body_block_colum_row_block_row_row_img"/>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div className="body_block_colum_row">
-                <div className="body_block_colum_row_block">
-                  <img className="body_block_colum_row_block_img" src={img7} alt=""/>
-                  <div className="body_block_colum_row_block_title">Modern Villa 55 with Pool</div>
-                  <div className="body_block_colum_row_block_subtitle">Al Marsa Street, 66, Dubai</div>
-                  <div className="body_block_colum_row_block_row">
-                    <div className="body_block_colum_row_block_row_colum">
-                      <div className="body_block_colum_row_block_row_colum_title">Sale: 105,56</div>
-                      <div className="body_block_colum_row_block_row_colum_subtitle">Rent: 2,5</div>
-                    </div>
-                    <div className="body_block_colum_row_block_row_row">
-                      <img src={bit2} alt="" className="body_block_colum_row_block_row_row_img"/>
-                      <img src={USDT} alt="" className="body_block_colum_row_block_row_row_img"/>
-                      <img src={IDK} alt="" className="body_block_colum_row_block_row_row_img"/>
-                      <img src={DH} alt="" className="body_block_colum_row_block_row_row_img"/>
-                    </div>
-                  </div>
-                </div>
-                <div className="body_block_colum_row_block">
-                  <img className="body_block_colum_row_block_img" src={img8} alt=""/>
-                  <div className="body_block_colum_row_block_title">The residence resort</div>
-                  <div className="body_block_colum_row_block_subtitle">Thalang District, Thailand, Phuket</div>
-                  <div className="body_block_colum_row_block_row">
-                    <div className="body_block_colum_row_block_row_colum">
-                      <div className="body_block_colum_row_block_row_colum_title">Sale: 105,56 </div>
-                      <div className="body_block_colum_row_block_row_colum_subtitle">Rent: n/a</div>
-                    </div>
-                    <div className="body_block_colum_row_block_row_row">
-                      <img src={bit2} alt="" className="body_block_colum_row_block_row_row_img"/>
-                      <img src={USDT} alt="" className="body_block_colum_row_block_row_row_img"/>
-                      <img src={IDK} alt="" className="body_block_colum_row_block_row_row_img"/>
-                      <img src={DH} alt="" className="body_block_colum_row_block_row_row_img"/>
-                    </div>
-                  </div>
-                </div>
-                <div className="body_block_colum_row_block">
-                  <img className="body_block_colum_row_block_img" src={img9} alt=""/>
-                  <div className="body_block_colum_row_block_title">Villa Beyond-Namaste</div>
-                  <div className="body_block_colum_row_block_subtitle">Bang Thao, Thailand, Phuket</div>
-                  <div className="body_block_colum_row_block_row">
-                    <div className="body_block_colum_row_block_row_colum">
-                      <div className="body_block_colum_row_block_row_colum_title">Sale: 105,56</div>
-                      <div className="body_block_colum_row_block_row_colum_subtitle">Rent: 3,7</div>
-                    </div>
-                    <div className="body_block_colum_row_block_row_row">
-                      <img src={bit2} alt="" className="body_block_colum_row_block_row_row_img"/>
-                      <img src={USDT} alt="" className="body_block_colum_row_block_row_row_img"/>
-                      <img src={IDK} alt="" className="body_block_colum_row_block_row_row_img"/>
-                      <img src={DH} alt="" className="body_block_colum_row_block_row_row_img"/>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
+            ))}
           </div>
         </div>
         <div className="phone_wrapper">

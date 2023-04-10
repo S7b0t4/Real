@@ -1,7 +1,6 @@
 .container{
   max-width: 1220px;
   margin: 0 auto;
-  padding: 0 10px;
 }
 .App{
   max-width: 100%;
@@ -79,6 +78,7 @@
   color: white;
   display: flex;
   justify-content: space-between;
+  padding: 10px;
 }
 .header_top_row_cost_row{
   display: flex;
@@ -90,7 +90,12 @@
   user-select: none;
 }
 .body_block{
+  max-width: 100%;
   padding-bottom: 202px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: space-between;
 }
 .body_row{
   display: flex;
@@ -137,56 +142,27 @@
   text-align: center;
 }
 /*body_block_colum_row*/
-.body_block_colum{
-  display: flex;
-  flex-direction: column;
-  gap: 60px;
+.body_block_item{
+  width: 32%;
 }
-.body_block_colum_row{
-  display: flex;
-  justify-content: space-between;
-}
-.body_block_colum_row_block{
-  display: flex;
-  flex-direction: column;
-}
-.body_block_colum_row_block_img{
+.body_block_item_img{
   width: 100%;
 }
-.body_block_colum_row_block_title{
+.body_block_item_title{
   cursor: pointer;
-  margin-top: 10px;
   font-size: 22px;
-  color: #3A3A3A;
 }
-.body_block_colum_row_block_subtitle{
-  margin-top: 2px;
+.body_block_item_subtitle{
   font-size: 14px;
   color: #9D9D9D;
 }
-.body_block_colum_row_block_row{
-  margin-top: 12px;
-  display: flex;
-  justify-content: space-between;
-}
-.body_block_colum_row_block_row_colum{
-  display: flex;
-  flex-direction: column;
-}
-.body_block_colum_row_block_row_colum_title{
+.body_block_item_sale{
   font-size: 18px;
   color: #3A3A3A;
 }
-.body_block_colum_row_block_row_colum_subtitle{
+.body_block_item_rent{
   font-size: 18px;
   color: #3A3A3A;
-}
-.body_block_colum_row_block_row_row_img{
-  max-width: 32px;
-}
-.body_block_colum_row_block_row_row{
-  display: flex;
-  gap: 6px;
 }
 .phone{
   position: relative;
@@ -326,6 +302,15 @@
   justify-content: center;
 }
 @media screen and (max-width:1220px){
+  .body_block_item_wrapper{
+    padding: 10px 20px;
+  }
+  .body_block_item_img{
+    width: 100%;
+  }
+  .body_block_item{
+    width: 100%;
+  }
   .header_info_row_mobil_idk{
     display: flex;
   }
