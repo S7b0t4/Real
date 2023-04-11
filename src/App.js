@@ -62,7 +62,17 @@ const arr = [
 
 ]
 const newArr = [
-    <div className="icon">
+    <div onClick={
+      ()=> {
+        const idk = idkArr.filter(item =>{
+          for(let i = 0; i < item.tags.length; i++){
+            if(item.tags[i]="all"){
+              return true
+            }
+          }
+        })
+      }
+    } className="icon">
       <img src={all} alt=""/>
       <div className="icon_text">All</div>
     </div>,
@@ -114,7 +124,7 @@ const idkArr = [
     subtitle:"Al Marsa Street, 66, Dubai",
     sale:"Sale: 105,56 ",
     rent:"Rent: 2,5",
-    tags:["all", "residence"]
+    tags:["all", "idk"]
   },
   {
     img:img2,
@@ -122,7 +132,7 @@ const idkArr = [
     subtitle:"Thalang District, Thailand, Phuket",
     sale:"Sale: 105,56 ",
     rent:"Rent: n/a",
-    tags:["all", "residence"]
+    tags:["all", "bmgdrive"]
   },
   {
     img:img3,
@@ -130,7 +140,7 @@ const idkArr = [
     subtitle:"Bang Thao, Thailand, Phuket",
     sale:"Sale: 105,56 ",
     rent:"Rent: 3,7",
-    tags:["all", "residence"]
+    tags:["all", "idk"]
   },
   {
     img:img4,
@@ -146,7 +156,7 @@ const idkArr = [
     subtitle:"The Waves, Dubai Marina, Dubai",
     sale:"Sale: 105,56 ",
     rent:"Rent: n/a",
-    tags:["all", "residence"]
+    tags:["all", "sdf"]
   },
   {
     img:img6,
@@ -154,7 +164,7 @@ const idkArr = [
     subtitle:"Ava by Omniyat, Palm Jumeirah, Dubai",
     sale:"Sale: 105,56 ",
     rent:"Rent: 3,7",
-    tags:["all", "residence"]
+    tags:["all", "sdf"]
   },
   {
     img:img7,
@@ -178,13 +188,118 @@ const idkArr = [
     subtitle:"The Waves, Dubai Marina, Dubai",
     sale:"Sale: 105,56 ",
     rent:"Rent: 3,7",
-    tags:["all", "residence"]
+    tags:["all", "idk"]
   },
-
 ]
 function App() {
   const [index, setIndex] = useState(0)
   const [newIndex, setNewIndex] = useState(0)
+  const [idky, setIdky] = useState(idkArr)
+
+  const newArr = [
+    <div onClick={
+      ()=> {
+        const idk = idkArr.filter(item =>{
+          for(let i = 0; i < item.tags.length; i++){
+            if(item.tags[i]=="all"){
+              return true
+            }
+            return false
+          }
+        })
+
+        setIdky(idk)
+      }
+    } className="icon">
+      <img src={all} alt=""/>
+      <div className="icon_text">All</div>
+    </div>,
+    <div onClick={
+      ()=> {
+        const idk = idkArr.filter(item =>{
+          for(let i = 0; i < item.tags.length; i++){
+            if(item.tags[i]=="idk"){
+              return true
+            }
+          }
+        })
+        setIdky(idk)
+      }
+    }className="icon">
+      <img src={seaside} alt=""/>
+      <div className="icon_text">Seaside</div>
+    </div>,
+    <div onClick={
+      ()=> {
+        const idk = idkArr.filter(item =>{
+          for(let i = 0; i < item.tags.length; i++){
+            if(item.tags[i]=="residence"){
+              return true
+            }
+          }
+        })
+        setIdky(idk)
+      }
+    }className="icon">
+      <img src={mountains} alt=""/>
+      <div className="icon_text">Mountains</div>
+    </div>,
+    <div onClick={
+      ()=> {
+        const idk = idkArr.filter(item =>{
+          for(let i = 0; i < item.tags.length; i++){
+            if(item.tags[i]=="bmgdrive"){
+              return true
+            }
+          }
+        })
+        setIdky(idk)
+      }
+    } className="icon">
+      <img src={Historical} alt=""/>
+      <div className="icon_text">Historical</div>
+    </div>,
+    <div onClick={
+      ()=> {
+        const idk = idkArr.filter(item =>{
+          for(let i = 0; i < item.tags.length; i++){
+            if(item.tags[i]=="sdf"){
+              return true
+            }
+          }
+        })
+        setIdky(idk)
+      }
+    } className="icon">
+      <img src={Residence} alt=""/>
+      <div className="icon_text">Residence</div>
+    </div>,
+    <div className="icon">
+      <img src={For_life} alt=""/>
+      <div className="icon_text">For life</div>
+    </div>,
+    <div className="icon">
+      <img src={Big_city_life} alt=""/>
+      <div className="icon_text">Big city life</div>
+    </div>,
+    <div className="icon">
+      <img src={Prestige} alt=""/>
+      <div className="icon_text">Prestige</div>
+    </div>,
+    <div className="icon">
+      <img src={Investment} alt=""/>
+      <div className="icon_text">Investment</div>
+    </div>,
+    <div className="icon">
+      <img src={Commecial} alt=""/>
+      <div className="icon_text">Commecial</div>
+    </div>,
+    <div className="icon">
+      <img src={Designer} alt=""/>
+      <div className="icon_text">Designer’s</div>
+    </div>,
+  ]
+
   return (
     <div className="App">
       <div className="header">
@@ -258,50 +373,10 @@ function App() {
                 <div className="icon_text">Filter</div>
               </div>
               <img src={line} alt=""/>
-              <div className="icon">
-                <img src={all} alt=""/>
-                <div className="icon_text">All</div>
-              </div>
-              <div className="icon">
-                <img src={seaside} alt=""/>
-                <div className="icon_text">Seaside</div>
-              </div>
-              <div className="icon">
-                <img src={mountains} alt=""/>
-                <div className="icon_text">Mountains</div>
-              </div>
-              <div className="icon">
-                <img src={Historical} alt=""/>
-                <div className="icon_text">Historical</div>
-              </div>
-              <div className="icon">
-                <img src={Residence} alt=""/>
-                <div className="icon_text">Residence</div>
-              </div>
-              <div className="icon">
-                <img src={For_life} alt=""/>
-                <div className="icon_text">For life</div>
-              </div>
-              <div className="icon">
-                <img src={Big_city_life} alt=""/>
-                <div className="icon_text">Big city life</div>
-              </div>
-              <div className="icon">
-                <img src={Prestige} alt=""/>
-                <div className="icon_text">Prestige</div>
-              </div>
-              <div className="icon">
-                <img src={Investment} alt=""/>
-                <div className="icon_text">Investment</div>
-              </div>
-              <div className="icon">
-                <img src={Commecial} alt=""/>
-                <div className="icon_text">Commecial</div>
-              </div>
-              <div className="icon">
-                <img src={Designer} alt=""/>
-                <div className="icon_text">Designer’s</div>
-              </div>
+              {newArr.map((item =>{
+                return item
+              }))}
+
             </div>
             <div className="body_row_block">
               <div className="body_row_block_btn">All</div>
@@ -340,7 +415,7 @@ function App() {
             </div>
           </div>
           <div className="body_block">
-            {idkArr.map((item)=>(
+            {idky.map((item)=>(
               <div className="body_block_item">
                 <img className="body_block_item_img" src={item.img} alt=""/>
                 <div className="body_block_item_wrapper">
