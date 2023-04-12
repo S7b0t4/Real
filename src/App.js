@@ -30,7 +30,6 @@ import IDK from "./src/IDK.svg"
 import DH from "./src/DH.svg"
 import phone from "./src/phone.svg"
 import filttr from "./src/filttr.svg"
-import idk_btn from "./src/idk_btn.svg"
 import {useState} from "react";
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Pagination, FreeMode } from 'swiper';
@@ -419,10 +418,20 @@ function App() {
               <div className="body_block_item">
                 <img className="body_block_item_img" src={item.img} alt=""/>
                 <div className="body_block_item_wrapper">
-                  <div className="body_block_item_title">{item.title}</div>
+                  <a href={"/page1"} className="body_block_item_title">{item.title}</a>
                   <div className="body_block_item_subtitle">{item.subtitle}</div>
-                  <div className="body_block_item_sale">{item.sale}</div>
-                  <div className="body_block_item_rent">{item.rent}</div>
+                  <div className="body_block_item_row">
+                    <div className="body_block_item_row_block">
+                      <div className="body_block_item_sale">{item.sale}</div>
+                      <div className="body_block_item_rent">{item.rent}</div>
+                    </div>
+                    <div className="body_block_item_row_block">
+                      <img src={bit2} alt="" className="body_block_item_row_block_img"/>
+                      <img src={USDT} alt="" className="body_block_item_row_block_img"/>
+                      <img src={IDK} alt="" className="body_block_item_row_block_img"/>
+                      <img src={DH} alt="" className="body_block_item_row_block_img"/>
+                    </div>
+                  </div>
                 </div>
               </div>
             ))}

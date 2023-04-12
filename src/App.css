@@ -143,11 +143,14 @@
 /*body_block_colum_row*/
 .body_block_item{
   width: 32%;
+  margin-bottom: 60px;
 }
 .body_block_item_img{
   width: 100%;
 }
 .body_block_item_title{
+  text-decoration: none;
+  color:black;
   cursor: pointer;
   font-size: 22px;
 }
@@ -299,6 +302,15 @@
 .dkdslfk{
   display: flex;
   justify-content: center;
+}
+.body_block_item_row{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.body_block_item_row_block{
+  display: flex;
+  gap: 6px;
 }
 @media screen and (max-width:1220px){
   .body_block_item_wrapper{
