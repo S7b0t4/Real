@@ -1,8 +1,10 @@
 .header{
     border-bottom: 1px solid #EDEDED;
 }
-.header_top_row_row{
+.body_block_item_new_row_g{
+    display: flex;
     color: #3A3A3A;
+    gap: 6px;
 }
 .header_top_row_row_row{
     display: flex;

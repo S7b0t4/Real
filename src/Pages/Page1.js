@@ -71,7 +71,7 @@ const Page1 = () => {
       <div className="header">
         <div className="header_container container">
           <div className="header_top_row_row">
-            <div className="header_top_row_cost_row">
+            <div className="body_block_item_new_row_g">
               <img src={bit} alt="" className="header_top_row_cost_row"/>
               <div className="header_top_row_cost_num">~$21,822.74</div>
             </div>
@@ -82,7 +82,7 @@ const Page1 = () => {
                 <div className="header_top_row_text_text green">showmehome.io</div>
                 <div className="header_top_row_text_text orange">showmehome.io</div>
               </div>
-              <div className="header_top_row_cost_row">
+              <div className="body_block_item_new_row_g">
                 <img src={eng} alt="" className="header_top_row_cost_row"/>
                 <div className="header_top_row_cost_num">Eng</div>
               </div>
@@ -303,7 +303,7 @@ const Page1 = () => {
                     <a href={"/page1"} className="body_block_item_new_title">{item.title}</a>
                     <div className="body_block_item_new_subtitle">{item.subtitle}</div>
                     <div className="body_block_item_new_row">
-                      <div className="body_block_item_new_row_block">
+                      <div className="body_block_item_new_row_block colum">
                         <div className="body_block_item_new_sale">{item.sale}</div>
                         <div className="body_block_item_new_rent">{item.rent}</div>
                       </div>

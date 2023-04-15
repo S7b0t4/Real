@@ -310,6 +310,12 @@
 }
 .body_block_item_row_block{
   display: flex;
+}
+.colum{
+  display: flex;
+  flex-direction: column;
+}
+.body_block_item_row_block_row{
   gap: 6px;
 }
 @media screen and (max-width:1220px){

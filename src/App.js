@@ -30,7 +30,7 @@ import IDK from "./src/IDK.svg"
 import DH from "./src/DH.svg"
 import phone from "./src/phone.svg"
 import filttr from "./src/filttr.svg"
-import {useState} from "react";
+import {useState, useEffect} from "react";
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Pagination, FreeMode } from 'swiper';
 import 'swiper/swiper-bundle.min.css';
@@ -60,62 +60,7 @@ const arr = [
   },
 
 ]
-const newArr = [
-    <div onClick={
-      ()=> {
-        const idk = idkArr.filter(item =>{
-          for(let i = 0; i < item.tags.length; i++){
-            if(item.tags[i]="all"){
-              return true
-            }
-          }
-        })
-      }
-    } className="icon">
-      <img src={all} alt=""/>
-      <div className="icon_text">All</div>
-    </div>,
-    <div className="icon">
-      <img src={seaside} alt=""/>
-      <div className="icon_text">Seaside</div>
-    </div>,
-    <div className="icon">
-      <img src={mountains} alt=""/>
-      <div className="icon_text">Mountains</div>
-    </div>,
-    <div className="icon">
-      <img src={Historical} alt=""/>
-      <div className="icon_text">Historical</div>
-    </div>,
-    <div className="icon">
-      <img src={Residence} alt=""/>
-      <div className="icon_text">Residence</div>
-    </div>,
-    <div className="icon">
-      <img src={For_life} alt=""/>
-      <div className="icon_text">For life</div>
-    </div>,
-    <div className="icon">
-      <img src={Big_city_life} alt=""/>
-      <div className="icon_text">Big city life</div>
-    </div>,
-    <div className="icon">
-      <img src={Prestige} alt=""/>
-      <div className="icon_text">Prestige</div>
-    </div>,
-    <div className="icon">
-      <img src={Investment} alt=""/>
-      <div className="icon_text">Investment</div>
-    </div>,
-    <div className="icon">
-      <img src={Commecial} alt=""/>
-      <div className="icon_text">Commecial</div>
-    </div>,
-    <div className="icon">
-      <img src={Designer} alt=""/>
-      <div className="icon_text">Designer’s</div>
-    </div>,
-  ]
+
 const idkArr = [
   {
     img:img1,
@@ -191,23 +136,25 @@ const idkArr = [
   },
 ]
 function App() {
-  const [index, setIndex] = useState(0)
-  const [newIndex, setNewIndex] = useState(0)
   const [idky, setIdky] = useState(idkArr)
+  const [filter, setFilter] = useState('all')
+
+
+  const makeSearch = () => {
+    let houses = idkArr.filter(item =>{
+      return item.tags.includes(filter)
+    })
+    setIdky(houses)
+  }
+
+  useEffect(() => {
+    makeSearch(filter)
+  }, [filter])
 
   const newArr = [
     <div onClick={
       ()=> {
-        const idk = idkArr.filter(item =>{
-          for(let i = 0; i < item.tags.length; i++){
-            if(item.tags[i]=="all"){
-              return true
-            }
-            return false
-          }
-        })
-
-        setIdky(idk)
+        setFilter('all')
       }
     } className="icon">
       <img src={all} alt=""/>
@@ -215,14 +162,7 @@ function App() {
     </div>,
     <div onClick={
       ()=> {
-        const idk = idkArr.filter(item =>{
-          for(let i = 0; i < item.tags.length; i++){
-            if(item.tags[i]=="idk"){
-              return true
-            }
-          }
-        })
-        setIdky(idk)
+        setFilter('idk')
       }
     }className="icon">
       <img src={seaside} alt=""/>
@@ -230,14 +170,7 @@ function App() {
     </div>,
     <div onClick={
       ()=> {
-        const idk = idkArr.filter(item =>{
-          for(let i = 0; i < item.tags.length; i++){
-            if(item.tags[i]=="residence"){
-              return true
-            }
-          }
-        })
-        setIdky(idk)
+        setFilter('idk')
       }
     }className="icon">
       <img src={mountains} alt=""/>
@@ -245,14 +178,7 @@ function App() {
     </div>,
     <div onClick={
       ()=> {
-        const idk = idkArr.filter(item =>{
-          for(let i = 0; i < item.tags.length; i++){
-            if(item.tags[i]=="bmgdrive"){
-              return true
-            }
-          }
-        })
-        setIdky(idk)
+        makeSearch('bmgdrive')
       }
     } className="icon">
       <img src={Historical} alt=""/>
@@ -260,14 +186,7 @@ function App() {
     </div>,
     <div onClick={
       ()=> {
-        const idk = idkArr.filter(item =>{
-          for(let i = 0; i < item.tags.length; i++){
-            if(item.tags[i]=="sdf"){
-              return true
-            }
-          }
-        })
-        setIdky(idk)
+        makeSearch('sdf')
       }
     } className="icon">
       <img src={Residence} alt=""/>
@@ -348,7 +267,7 @@ function App() {
               slidesPerView={1}
               className="row"
             >
-              {arr.map((slide) =>(
+              {arr.map((slide ) =>(
                 <SwiperSlide>
                   <div className="row_center">
                     <div className="row_row">
@@ -421,11 +340,11 @@ function App() {
                   <a href={"/page1"} className="body_block_item_title">{item.title}</a>
                   <div className="body_block_item_subtitle">{item.subtitle}</div>
                   <div className="body_block_item_row">
-                    <div className="body_block_item_row_block">
+                    <div className="body_block_item_row_block colum">
                       <div className="body_block_item_sale">{item.sale}</div>
                       <div className="body_block_item_rent">{item.rent}</div>
                     </div>
-                    <div className="body_block_item_row_block">
+                    <div className="body_block_item_row_block body_block_item_row_block_row">
                       <img src={bit2} alt="" className="body_block_item_row_block_img"/>
                       <img src={USDT} alt="" className="body_block_item_row_block_img"/>
                       <img src={IDK} alt="" className="body_block_item_row_block_img"/>
