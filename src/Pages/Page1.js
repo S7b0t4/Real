@@ -24,11 +24,6 @@ import img1 from "../src/img1.png";
 import img2 from "../src/img2.png";
 import img3 from "../src/img3.png";
 import img4 from "../src/img4.png";
-import img5 from "../src/img5.png";
-import img6 from "../src/img6.png";
-import img7 from "../src/img7.png";
-import img8 from "../src/img8.png";
-import img9 from "../src/img9.png";
 
 
 const Page1 = () => {

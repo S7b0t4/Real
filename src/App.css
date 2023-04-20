@@ -122,12 +122,15 @@
   box-shadow: 0px 2px 4px 0px #61616133;
 }
 .body_row_row{
+  width: 100%;
   display: flex;
   gap: 29px;
 }
 .icon{
+  align-items: center;
   max-width: 60px;
   text-align: center;
+  width: 63px;
 }
 .icon:hover{
 
@@ -257,6 +260,11 @@
 .body_row_gow_btn{
   position: absolute;
   cursor: pointer;
+}
+.filter_row{
+  width: 70%;
+  display: flex;
+  justify-content: space-between;
 }
 .left{
   left: 0;

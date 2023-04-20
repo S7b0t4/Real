@@ -30,10 +30,11 @@ import IDK from "./src/IDK.svg"
 import DH from "./src/DH.svg"
 import phone from "./src/phone.svg"
 import filttr from "./src/filttr.svg"
-import {useState, useEffect} from "react";
+import React, {useState, useEffect} from "react";
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Pagination, FreeMode } from 'swiper';
 import 'swiper/swiper-bundle.min.css';
+import Filter from "./Comp/Filter"
 
 const arr = [
   {
@@ -137,7 +138,64 @@ const idkArr = [
 ]
 function App() {
   const [idky, setIdky] = useState(idkArr)
-  const [filter, setFilter] = useState('all')
+
+  const newArr = [
+    {
+      img:all,
+      text:"All",
+      link:"all",
+    },
+    {
+      img:seaside,
+      text:"Seaside",
+      link:"idk",
+    },
+    {
+      img:mountains,
+      text:"Mountains",
+      link:"sdf",
+    },
+    {
+      img:Historical,
+      text:"Historical",
+      link:"bmgdrive",
+    },
+    {
+      img:Residence,
+      text:"Residence",
+      link:"sdf",
+    },
+    {
+      img:For_life,
+      text:"For life",
+      link:"For_life",
+    },
+    {
+      img:Big_city_life,
+      text:"Big city life",
+      link:"Big_city_life",
+    },
+    {
+      img:Prestige,
+      text:"Prestige",
+      link:"Prestige",
+    },
+    {
+      img:Investment,
+      text:"Investment",
+      link:"Investment",
+    },
+    {
+      img:Commecial,
+      text:"Commecial",
+      link:"Commecial",
+    },
+    {
+      img:Designer,
+      text:"Designer’s",
+      link:"Designer",
+    },
+  ]
 
 
   const makeSearch = () => {
@@ -146,77 +204,6 @@ function App() {
     })
     setIdky(houses)
   }
-
-  useEffect(() => {
-    makeSearch(filter)
-  }, [filter])
-
-  const newArr = [
-    <div onClick={
-      ()=> {
-        setFilter('all')
-      }
-    } className="icon">
-      <img src={all} alt=""/>
-      <div className="icon_text">All</div>
-    </div>,
-    <div onClick={
-      ()=> {
-        setFilter('idk')
-      }
-    }className="icon">
-      <img src={seaside} alt=""/>
-      <div className="icon_text">Seaside</div>
-    </div>,
-    <div onClick={
-      ()=> {
-        setFilter('idk')
-      }
-    }className="icon">
-      <img src={mountains} alt=""/>
-      <div className="icon_text">Mountains</div>
-    </div>,
-    <div onClick={
-      ()=> {
-        makeSearch('bmgdrive')
-      }
-    } className="icon">
-      <img src={Historical} alt=""/>
-      <div className="icon_text">Historical</div>
-    </div>,
-    <div onClick={
-      ()=> {
-        makeSearch('sdf')
-      }
-    } className="icon">
-      <img src={Residence} alt=""/>
-      <div className="icon_text">Residence</div>
-    </div>,
-    <div className="icon">
-      <img src={For_life} alt=""/>
-      <div className="icon_text">For life</div>
-    </div>,
-    <div className="icon">
-      <img src={Big_city_life} alt=""/>
-      <div className="icon_text">Big city life</div>
-    </div>,
-    <div className="icon">
-      <img src={Prestige} alt=""/>
-      <div className="icon_text">Prestige</div>
-    </div>,
-    <div className="icon">
-      <img src={Investment} alt=""/>
-      <div className="icon_text">Investment</div>
-    </div>,
-    <div className="icon">
-      <img src={Commecial} alt=""/>
-      <div className="icon_text">Commecial</div>
-    </div>,
-    <div className="icon">
-      <img src={Designer} alt=""/>
-      <div className="icon_text">Designer’s</div>
-    </div>,
-  ]
 
   return (
     <div className="App">
@@ -291,9 +278,7 @@ function App() {
                 <div className="icon_text">Filter</div>
               </div>
               <img src={line} alt=""/>
-              {newArr.map((item =>{
-                return item
-              }))}
+              <Filter />
 
             </div>
             <div className="body_row_block">
@@ -322,10 +307,11 @@ function App() {
                 slidesPerView={4}
                 className="row"
               >
-                {newArr.map((slide) =>(
+                {newArr.map((item) =>(
                   <SwiperSlide>
-                    <div className="row dkdslfk">
-                      {slide}
+                    <div className="icon">
+                      <img src={item.img} alt=""/>
+                      <div className="icon_text">{item.text}</div>
                     </div>
                   </SwiperSlide>
                 ))}
