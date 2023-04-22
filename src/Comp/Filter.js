@@ -68,7 +68,7 @@ const newArr = [
     link:"Designer",
   },
 ]
-const Filter = (props) => {
+const Filter = ({ onFilter }) => {
   const [idky,setIdky] = useState(newArr)
   const makeSearch = (filter) => {
     let houses = newArr.filter(item =>{
@@ -81,7 +81,7 @@ const Filter = (props) => {
       {
         idky.map((item)=>(
           <div className="icon" onClick={()=>{
-            makeSearch(item.link)
+            onFilter(item.link)
           }}>
             <img src={item.img} alt=""/>
             <div className="icon_text">{item.text}</div>

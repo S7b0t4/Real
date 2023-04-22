@@ -35,6 +35,7 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import { Pagination, FreeMode } from 'swiper';
 import 'swiper/swiper-bundle.min.css';
 import Filter from "./Comp/Filter"
+import Filters from "./Comp/Filters"
 
 const arr = [
   {
@@ -138,6 +139,12 @@ const idkArr = [
 ]
 function App() {
   const [idky, setIdky] = useState(idkArr)
+  const [disable, setDisable] = useState(true)
+
+  const handleFilter = (someFilter) => {
+    console.log(someFilter)
+    makeSearch(someFilter)
+  }
 
   const newArr = [
     {
@@ -198,7 +205,7 @@ function App() {
   ]
 
 
-  const makeSearch = () => {
+  const makeSearch = (filter) => {
     let houses = idkArr.filter(item =>{
       return item.tags.includes(filter)
     })
@@ -267,18 +274,25 @@ function App() {
               ))}
             </Swiper>
           </div>
+          {disable || <div className="filters_wrapper">
+            <div className="container">
+              <Filters />
+            </div>
+          </div>}
         </div>
       </div>
       <div className="body">
         <div className="container">
           <div className="body_row">
             <div className="body_row_row">
-              <div className="icon">
+              <div className="icon" onClick={()=>{
+                setDisable(!disable)
+              }}>
                 <img src={filter} alt=""/>
                 <div className="icon_text">Filter</div>
               </div>
               <img src={line} alt=""/>
-              <Filter />
+              <Filter onFilter={handleFilter} />
 
             </div>
             <div className="body_row_block">
