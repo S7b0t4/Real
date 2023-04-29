@@ -211,6 +211,9 @@ function App() {
     })
     setIdky(houses)
   }
+  const setDisab = () => {
+    setDisable(!disable)
+  }
 
   return (
     <div className="App">
@@ -276,7 +279,7 @@ function App() {
           </div>
           {disable || <div className="filters_wrapper">
             <div className="container">
-              <Filters />
+              <Filters onFilters={setDisab}/>
             </div>
           </div>}
         </div>
@@ -285,9 +288,7 @@ function App() {
         <div className="container">
           <div className="body_row">
             <div className="body_row_row">
-              <div className="icon" onClick={()=>{
-                setDisable(!disable)
-              }}>
+              <div className="icon" onClick={setDisab}>
                 <img src={filter} alt=""/>
                 <div className="icon_text">Filter</div>
               </div>
@@ -303,7 +304,7 @@ function App() {
           </div>
           <div className="body_row_adoptive">
             <div className="filter_btn_row">
-              <div className="filter_btn">
+              <div className="filter_btn" onClick={setDisab}>
                 <img src={filttr} alt=""/>
                 <div className="filter_btn_text">Filter</div>
               </div>

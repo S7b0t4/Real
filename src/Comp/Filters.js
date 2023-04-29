@@ -2,13 +2,13 @@ import React from 'react';
 import "./Filters.css"
 import exit from "../src/exit.svg"
 
-const Filters = ({ onFilter }) => {
+const Filters = ({ onFilters }) => {
   return (
     <div className="filters_bg">
       <div className="filter_container">
         <div className="filter_top_row">
           <div className="filter_top_row_title">Filter</div>
-          <div className="filter_top_row_exit">
+          <div className="filter_top_row_exit" onClick={onFilters}>
             <img src={exit} alt=""/>
           </div>
         </div>
